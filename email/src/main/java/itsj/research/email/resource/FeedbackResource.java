@@ -43,8 +43,8 @@ public class FeedbackResource {
 
         mailSender.setHost("smtp.gmail.com");
         mailSender.setPort(587);
-        mailSender.setUsername("adamnguyenterralogic@gmail.com");
-        mailSender.setPassword("Toan1982");
+        mailSender.setUsername("from@gmail.com");
+        mailSender.setPassword("password");
 
         Properties props = mailSender.getJavaMailProperties();
         props.put("mail.transport.protocol", "smtp");
@@ -55,7 +55,7 @@ public class FeedbackResource {
         // create an email instance
         SimpleMailMessage mailMessage = new SimpleMailMessage();
         mailMessage.setFrom(feedback.getEmail());
-        mailMessage.setTo("lahirua-itsj@hikesiya.co.jp");
+        mailMessage.setTo("to@gmail.com");
         mailMessage.setSubject("Feedback from "+feedback.getName());
         mailMessage.setText(feedback.getFeedback());
 
